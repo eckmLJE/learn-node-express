@@ -28,6 +28,7 @@ app.use(async (req, res, next) => {
 app.use("/session", routes.session);
 app.use("/users", routes.user);
 app.use("/messages", routes.message);
+app.use("/plans", routes.plan);
 
 // Start
 
@@ -46,10 +47,11 @@ sequelize.sync({ force: eraseDatabaseOnSync }).then(async () => {
 const createUsersWithMessages = async () => {
   await models.User.create(
     {
-      username: "rwieruch",
+      username: "eckm",
+      email: "lucas.eckman@gmail.com",
       messages: [
         {
-          text: "Published the Road to learn React"
+          text: "Learning how to use Sequelize ORM"
         }
       ]
     },
@@ -60,13 +62,14 @@ const createUsersWithMessages = async () => {
 
   await models.User.create(
     {
-      username: "ddavids",
+      username: "cbrue",
+      email: "callie.bruemmer@gmail.com",
       messages: [
         {
-          text: "Happy to release ..."
+          text: "Along for the ride..."
         },
         {
-          text: "Published a complete ..."
+          text: "Keep going!"
         }
       ]
     },
@@ -74,4 +77,11 @@ const createUsersWithMessages = async () => {
       include: [models.Message]
     }
   );
+
+  await models.Plan.create({
+    name: "Robyn @ The Anthem",
+    eventId: "4632964",
+    venueId: "430286",
+    date: "2019-03-09T19:00:00"
+  });
 };

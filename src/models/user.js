@@ -3,11 +3,16 @@ const user = (sequelize, DataTypes) => {
     username: {
       type: DataTypes.STRING,
       unique: true
+    },
+    email: {
+      type: DataTypes.STRING,
+      unique: true
     }
   });
 
   User.associate = models => {
     User.hasMany(models.Message, { onDelete: "CASCADE" });
+    User.belongsToMany(models.Plan, { through: 'PlanUser'});
   };
 
   User.findByLogin = async login => {
