@@ -1,0 +1,30 @@
+{
+  "name": "learn-node-express",
+  "version": "1.0.0",
+  "description": "Try not to look at guide",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eckmLJE/learn-node-express.git"
+  },
+  "keywords": [],
+  "author": "Lucas Eckman <lucas.eckman@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eckmLJE/learn-node-express/issues"
+  },
+  "homepage": "https://github.com/eckmLJE/learn-node-express#readme",
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "dotenv": "^6.2.0"
+  }
+}
